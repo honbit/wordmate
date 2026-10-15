@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="WordMate">
+  <meta name="theme-color" content="#6366f1">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <title>WordMate 背单词</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="app web-app" id="app">
+    <main class="main">
+      <section class="view active" id="view-learn"></section>
+      <section class="view" id="view-library"></section>
+      <section class="view" id="view-quiz"></section>
+      <section class="view" id="view-stats"></section>
+    </main>
+    <nav class="tabbar" id="tabbar">
+      <button class="nav-item active" data-view="learn" id="nav-learn"><span class="tab-ico">📘</span><span>学习</span><span class="badge" id="badge-learn" hidden></span></button>
+      <button class="nav-item" data-view="library" id="nav-library"><span class="tab-ico">📚</span><span>词库</span><span class="badge" id="badge-library" hidden></span></button>
+      <button class="nav-item" data-view="quiz" id="nav-quiz"><span class="tab-ico">✏️</span><span>测验</span></button>
+      <button class="nav-item" data-view="stats" id="nav-stats"><span class="tab-ico">📊</span><span>统计</span></button>
+    </nav>
+  </div>
+
+  <div class="toast-root" id="toast-root"></div>
+  <div id="modal-root"></div>
+
+  <script src="sw-register.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
